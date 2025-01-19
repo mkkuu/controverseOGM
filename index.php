@@ -4,7 +4,7 @@
 $page = $_GET['page'];
 
 if ($page == 'sommaire') {
-    require __DIR__ . '/pages/sommaire.php';
+    require __DIR__ . '/pages/summary.php';
 } elseif ($page == 'podcast') {
     require __DIR__ . '/pages/podcast.php';
 } elseif ($page == 'about_us') {

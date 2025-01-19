@@ -1,4 +1,4 @@
-<header class="bg-white">
+<header class="bg">
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 border-b-4" aria-label="Global">
     <div class="flex lg:flex-1">
       <a href="?page=accueil" class="-m-1.5 p-1.5">
@@ -59,7 +59,7 @@
               <svg class="size-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
                 <path fill-rule="evenodd" d="M2 10a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm6.39-2.908a.75.75 0 0 1 .766.027l3.5 2.25a.75.75 0 0 1 0 1.262l-3.5 2.25A.75.75 0 0 1 8 12.25v-4.5a.75.75 0 0 1 .39-.658Z" clip-rule="evenodd" />
               </svg>
-              Teaser
+              Teaser (incoming)
             </a>
           </div>
         </div>
