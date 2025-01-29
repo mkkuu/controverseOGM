@@ -6,6 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
+    <style>
+        /* Effet sliding */
+        .slide-in-left {
+            transform: translateX(-100%);
+            opacity: 0;
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        }
+  
+        .slide-in-right {
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+        }
+  
+        .slide-visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    </style>
     <nav class="bg">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 border-b-4" aria-label="Global">
           <div class="flex lg:flex-1">
@@ -107,23 +126,173 @@
               }
         </script>
     </nav>
-    <iframe src="https://embed.kumu.io/2c0c692fbadbbed69a7e006b0d09a046" width="1080" height="680" frameborder="0" class="mx-auto my-20"></iframe>
+    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1 class="text-5xl text-left font-bold text-gray-900 my-16 text-center">Glossaire</h1>
+
+        <div id="glossary" class="space-y-4">
+            <!-- Le glossaire sera généré ici -->
+        </div>
+    </div>
+
+    <script>
+        // Tableau des termes avec définitions pour chaque lettre
+        const terms = {
+            A: [
+                { term: "ADN", definition: "Acide Désoxyribo-Nucléique" },
+            ],
+            B: [
+
+            ],
+            C: [
+            ],
+            E: [
+                
+            ],
+            F: [
+                
+            ],
+            G: [
+                
+            ],
+            H: [
+                
+            ],
+            I: [
+                
+            ],
+            J: [
+                
+            ],
+            K: [
+                
+            ],
+            L: [
+                
+            ],
+            M: [
+                
+            ],
+            N: [
+                
+            ],
+            O: [
+                
+            ],
+            P: [
+                
+            ],
+            Q: [
+                
+            ],
+            R: [
+                
+            ],
+            S: [
+                
+            ],
+            T: [
+                
+            ],
+            U: [
+                
+            ],
+            V: [
+                
+            ],
+            W: [
+                
+            ],
+            X: [
+                
+            ],
+            Y: [
+                
+            ],
+            Z: [
+                
+            ]
+        };
+
+        function createGlossary() {
+            const glossary = document.getElementById("glossary");
+
+            for (let letter of Object.keys(terms)) {
+                const letterSection = document.createElement("div");
+                letterSection.classList.add("bg-white", "shadow", "rounded-md");
+
+                const button = document.createElement("button");
+                button.classList.add("flex", "justify-between", "items-center", "w-full", "p-4", "text-left", "text-lg", "font-medium", "text-gray-700", "hover:bg-gray-100", "focus:outline-none");
+                button.setAttribute("onclick", `toggleTerms('${letter}')`);
+                button.innerHTML = `
+                    <span>${letter}</span>
+                    <svg id="arrow-${letter}" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform transform rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                `;
+                letterSection.appendChild(button);
+
+                const ul = document.createElement("ul");
+                ul.id = `terms-${letter}`;
+                ul.classList.add("hidden", "px-6", "py-2", "space-y-4", "text-gray-600");
+
+                terms[letter].forEach(({ term, definition }) => {
+                    const li = document.createElement("li");
+                    li.classList.add("pb-4", "last:pb-0");
+
+                    li.innerHTML = `
+                        <span class="block text-gray-800 font-semibold">${term}</span>
+                        <span class="block text-gray-600 text-sm">${definition}</span>
+                    `;
+                    ul.appendChild(li);
+                });
+
+                letterSection.appendChild(ul);
+                glossary.appendChild(letterSection);
+            }
+        }
+
+        function toggleTerms(letter) {
+            const terms = document.getElementById(`terms-${letter}`);
+            const arrow = document.getElementById(`arrow-${letter}`);
+
+            if (terms.classList.contains('hidden')) {
+                terms.classList.remove('hidden');
+                arrow.classList.add('rotate-180'); 
+            } else {
+                terms.classList.add('hidden');
+                arrow.classList.remove('rotate-180');
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.slide-in-left, .slide-in-right').forEach((element) => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                    element.classList.add('slide-visible');
+                }
+            });
+        });
+
+        // Génère le glossaire à partir du tableau
+        createGlossary();
+    </script>
+    </body>
     <footer class="bg-gray-100 text-gray-700">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="flex flex-col items-center text-center space-y-4">
-          <div>
-            <ul class="flex space-x-4 text-sm font-medium">
-              <li><a href="index.html" class="hover:text-gray-900">Controverse</a></li>
-              <li><a href="about_us.html" class="hover:text-gray-900">À propos</a></li>
-              <li><a href="contact.html" class="hover:text-gray-900">Contact</a></li>
-            </ul>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div class="flex flex-col items-center text-center space-y-4">
+            <!-- Navigation Links -->
+            <div>
+              <ul class="flex space-x-4 text-sm font-medium">
+                <li><a href="index.html" class="hover:text-gray-900">Controverse</a></li>
+                <li><a href="about_us.html" class="hover:text-gray-900">À propos</a></li>
+                <li><a href="contact.html" class="hover:text-gray-900">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class=" mx-auto border-2 border-gray-200 my-8 w-1/3 "></div>
+          <div class="text-center text-sm">
+            <p>&copy; 2025 IsenXOGM. Tous droits réservés.</p>
           </div>
         </div>
-        <div class=" mx-auto border-2 border-gray-200 my-8 w-1/3 "></div>
-        <div class="text-center text-sm">
-          <p>&copy; 2025 IsenXOGM. Tous droits réservés.</p>
-        </div>
-      </div>
     </footer>
 </html>
-    
