@@ -24,6 +24,24 @@
           transform: translateX(0);
           opacity: 1;
       }
+
+      .text-box::-webkit-scrollbar {
+          width: 6px; /* Largeur de la barre */
+      }
+
+      .text-box::-webkit-scrollbar-thumb {
+          background-color: #d1d5db; /* Couleur de la barre */
+          border-radius: 10px; /* Bordures arrondies */
+      }
+
+      .text-box::-webkit-scrollbar-track {
+          background: transparent; /* Fond invisible */
+      }
+
+      /* Masquer les boutons de défilement (flèches) */
+      .text-box::-webkit-scrollbar-button {
+          display: none;
+      }
   </style>
     <nav class="bg">
         <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 border-b-4" aria-label="Global">
@@ -50,7 +68,7 @@
                     </div>
                     <div class="flex-auto">
                       <a href="summary.html" class="block font-semibold text-gray-900">
-                        Sommaire
+                        Rapport scientifique
                         <span class="absolute inset-0"></span>
                       </a>
                       <p class="mt-1 text-gray-600">Accéder au sommaire de notre rapport</p>
@@ -65,7 +83,7 @@
                         Bibliographie
                         <span class="absolute inset-0"></span>
                       </a>
-                      <p class="mt-1 text-gray-600">Nos sources à l'origine de notre travail</p>
+                      <p class="mt-1 text-gray-600">Les sources à l'origine de notre travail</p>
                     </div>
                   </div>
                   <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50">
@@ -163,9 +181,10 @@
                   </p>
               </div>
           </div>
-          <div id="details1" class="hidden h-32 w-1/2 mt-4 p-4 bg-gray-50 rounded-lg shadow-md slide-in-right">
+          <div id="details1" class="hidden h-64 w-1/2 mt-4 p-4 bg-gray-50 rounded-lg shadow-md slide-in-right">
             <button class="absolute top-2 right-2 text-gray-600 hover:text-gray-800" onclick="toggleDetails('details1')">✖</button>
-            <p class="text-gray-600"></p>
+            <p class="text-box text-gray-600 text-justify max-h-full text-sm my-2 mx-4 overflow-auto">Ces deux entretiens se sont révélés particulièrement utiles pour comprendre la manière dont la controverse s’imprègne dans la perception publique et dans la sphère politique. Ce qu’il est ressorti de manière unanime c’est que les NTG sont des technologies “comme les autres” et qu’elles ne sont pas intrinsèquement “bonnes” ou  “mauvaises”, c’est l’utilisation qu’on en fait qui détermine leurs impacts. La méfiance envers les OGM ne vient pas seulement d’un manque d’information, elle vient aussi d’un contexte historique de scandale et de manipulations d’informations qui ont déclenché une médiatisation et une opposition d’acteurs. Celle-ci nourrit plusieurs débats en Europe, sur la question juridique notamment, le précautionnisme dont nous faisons preuve est-il la bonne manière de réguler les OGM/NTG? Cette question ne fait pas l’unanimité, en revanche, les différents courants de pensées se mettent d’accord sur le fait que les politiques en vigueur ne sont ni à jour et ni adaptées. 
+              L’incertitude quant aux conséquences à long terme de l’utilisation des différentes techniques génomiques est également un sujet de discorde. Avons-nous atteint une maîtrise des techniques et des incertitudes suffisantes pour écarter totalement les risques ? C’est une question que se posent les chercheurs. L’un des arguments majeurs contre les NTG est qu’elles ne sont “pas naturelles”, ce qui alimente une perception de risque, de l’autre côté, les contradicteurs diraient que dans les champs de tout temps, des mutations, donc des modifications génétiques, opèrent de manière naturelle. Une autre similarité qui est ressortie est qu’il y avait une distance entre le débat dans la recherche et le débat politique. Les chercheurs produisent des connaissances en quantité importante, et malgré une opacité qui s’entretient dû à la multitude de positions et d’informations, nous n’arrivons pas aujourd’hui à faire consensus, le lobbying plus fort que jamais ferait parti des raisons principales qui ralentissent cette recherche d’un point d’accord.</p>
           </div>
           <div class="flex flex-col lg:flex-row-reverse items-center justify-center space-y-8 lg:space-y-0 mx-auto max-w-5xl">
               <div class="flex items-center justify-center w-1/3">
@@ -179,9 +198,10 @@
                   </p>
               </div>
           </div>
-          <div id="details2" class="hidden h-32 w-1/2 mt-4 p-4 bg-gray-50 rounded-lg shadow-md slide-in-right">
+          <div id="details2" class="hidden h-64 w-1/2 mt-4 p-4 bg-gray-50 rounded-lg shadow-md slide-in-right">
             <button class="absolute top-2 right-2 text-gray-600 hover:text-gray-800" onclick="toggleDetails('details2')">✖</button>
-            <p class="text-gray-600"></p>
+            <p class="text-box text-gray-600 text-justify max-h-full text-sm my-2 mx-4 overflow-auto">Dans cet entretien, notre but était d’en savoir plus sur la position d’une association défendant la cause d’une agriculture avec moins voire pas de pesticides, cela implique donc de suivre l’évolution du débat autour des OGM/NTG. Ce qu’il en ressort de la position qu’ils défendent, c’est que les OGM contribuent à augmenter l’utilisation des pesticides, ils sont donc contre l’utilisation des OGM, et plus récemment des NTG, cela ne seraient pour eux qu’un moyen d’échapper aux réglementations et pourraient renforcer la dépendance des agricultures aux grandes firmes agrochimiques. La rémunération suffisante des agriculteurs est une autre cause qu’il cherche à défendre et pour eux cela nécessite à ce que rien n’entretienne une augmentation des coûts pour les agriculteurs; 
+              Autoriser la multiplication des semences, privilégier les circuits courts et arrêter d’ajouter des contraintes aux agriculteurs sont des solutions qu’ils soutiennent et qui seraient en faveur d’un objectif d’alléger la pression économique et restrictive sur les épaules de nos agriculteurs. Nous lui avons également demander s’il pensait que les OGM/NTG pourraient être une aide pour régler les problèmes de sécurité alimentaire dans certaines zones du monde, selon lui, si des OGM sont arrivés en Afrique c’est principalement en raison d’une recherche des grandes firmes de vendre plus et il pense que nous devrions prioriser notre propre autonomie alimentaire avec des méthodes agricoles plus responsables avant d’exporter à l’étranger.</p>
           </div>
           <div class="flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 mx-auto max-w-5xl">
               <div class="flex items-center justify-center w-1/3">
@@ -190,14 +210,44 @@
               <div class="flex-1 text-center lg:text-left">
                   <h2 class="text-xl font-bold text-gray-900 mb-4 text-center slide-in-right">Christophe Noisette</h2>
                   <p class="text-gray-600 text-center slide-in-right">
-                    Description de l'intervenant 3 et de son rôle dans le projet. Un texte clair et détaillé pour expliquer leur expertise et leur point de vue sur les OGM.
+                    Christophe Noisette est rédacteur pour Inf’OGM, une association créée en 1999, qui propose un service d’information sur les OGM, les biotechnologies, les brevets et les semences. En participant à notre podcast, Christophe Noisette nous a permis d’en apprendre davantage au sujet des OGM et des NTG.
                     <button onclick="toggleDetails('details3')" class="text-black hover:text-gray-600">En savoir plus ...</button>
                   </p>
               </div>
           </div>
-          <div id="details3" class="hidden h-32 w-1/2 mt-4 p-4 bg-gray-50 rounded-lg shadow-md slide-in-right">
+          <div id="details3" class="hidden h-64 w-1/2 mt-4 p-4 bg-gray-50 rounded-lg shadow-md slide-in-right">
             <button class="absolute top-2 right-2 text-gray-600 hover:text-gray-800" onclick="toggleDetails('details3')">✖</button>
-            <p class="text-gray-600"></p>
+            <p class="text-box text-gray-600 text-justify max-h-full text-sm my-2 mx-4 overflow-auto">Durant cet interview, nous avons eu l’occasion de discuter de nombreux sujets :
+              Les nouvelles techniques génomiques (NTG) sont finalement des OGM. Même si le nom est
+              différent, fondamentalement, les différences sont faibles. Il n'y a pas de différence scientifique
+              ou philosophique significative entre la transgenèse classique et les NTG. Selon lui, il s’agit
+              surtout d’un changement de nom pour redonner une nouvelle image et éviter d’effrayer les
+              populations.
+              Les raisons de l'utilisation des NTG : un désir d'extension et de contrôle sur la nature, dans le but
+              de faciliter les pratiques culturales dans le domaine agricole.
+              Les plantes transgéniques réalisées sont principalement des plantes tolérantes aux herbicides
+              ou des plantes produisant leur propre insecticide. Ces plantes facilitent les pratiques agricoles,
+              mais peuvent également entraîner une augmentation de l'utilisation de produits chimiques
+              (opposition avec les avantages imaginés au départ).
+              Ces plantes peuvent avoir un impact sur la biodiversité, notamment avec des problèmes de
+              coévolution entre les espèces modifiées et les espèces sauvages dans l'environnement (on
+              introduit des espèces totalement nouvelles dans la nature).
+              Les cultures modifiées génétiquement peuvent contaminer les champs naturels par la biologie
+              et par l’activité humaine tout au long de la chaîne agroalimentaire.
+              On peut également se poser des questions concernant l’appropriation du vivant et les brevets.
+              Les OGM et NTG permettent de breveter le vivant, menaçant la biodiversité cultivée et le
+              contrôle des agriculteurs sur les semences. 
+              Concernant les préoccupations sanitaires, les études sont encore trop peu nombreuses et
+              fiables. On observe un manque d'études approfondies sur le long terme.
+              Nous avons pu aborder le sujet des perspectives d'avenir ainsi que la législation européenne.
+              Certains États membres s’opposent à l’utilisation des OGM, notamment sur la brevetabilité du
+              vivant. Cependant, étant donné que le Danemark prendra la présidence de l'Union européenne,
+              les discussions pourraient s'accélérer à l’avenir, puisque le Danemark fait partie des pays
+              favorables aux OGM.
+              À l’échelle européenne et mondiale, on observe des différences entre les pays. Par exemple,
+              l'Europe est en majorité contre l’utilisation et le développement des OGM tandis que certains
+              pays comme l'Argentine et le Japon y sont favorables et adoptent des réglementations par
+              conséquent très légères à leur égard (pas d’étiquetage, pas de traçabilité et peu d’évaluations).</p>
           </div>
       </div>
     </main>
